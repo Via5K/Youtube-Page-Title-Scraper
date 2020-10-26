@@ -10,7 +10,8 @@ import time
 import pandas as pd
 def scrape_video_titles(playlist_url: str, opts: Options):
     assert isinstance(playlist_url, str)
-    driver = webdriver.Chrome(options=opts, executable_path='C:/Users/Nautiyal/Desktop/All_Desktop_Files/[VIASK]/chromedriver_win32/chromedriver')
+    Chromepath = input('Enter the Path Of Chrome Webdriver')
+    driver = webdriver.Chrome(options=opts, executable_path=Chromepath)
     driver.get(playlist_url)
     # get html
     elem = driver.find_element_by_tag_name('html')
